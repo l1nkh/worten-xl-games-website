@@ -14,7 +14,7 @@ const Hero = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [loadedVideos, setLoadedVideos] = useState(0);
 
-    const totalVideos = 4;
+    const totalVideos = 1;
     const nextVideoRef = useRef(null);
 
     const handleVideoLoad = () => {
@@ -93,7 +93,7 @@ const Hero = () => {
             )}
 
             <div id='video-frame' className='relative z-10 h-dvh w-screen
-            overflow-hidden rounded-lg bg-blue-75'>
+            overflow-hidden rounded-lg bg-white'>
                 <div>
                     <div className='mask-clip-path absolute-center absolute z-50
                     size-64 cursor-pointer overflow-hidden rounded-lg'>
@@ -137,17 +137,17 @@ const Hero = () => {
                 </div>
 
                 <h1 className='special-font hero-heading absolute bottom-5 right-5
-                z-40 text-blue-75'>
-                    G<b>a</b>ming
+                z-40 text-white'>
+                    <b>W</b>orten
                 </h1>
 
                 <div className='absolute left-0 top-0 z-40 size-full'>
                     <div className='mt-24 px-5 sm:px-10'>
-                        <h1 className='special-font hero-heading text-blue-100'>
-                            Redefi<b>n</b>e
+                        <h1 className='special-font hero-heading text-white'>
+                            <b>X</b>L<b>G</b>ames
                         </h1>
-                        <p className='mb-5 max-w-64 font-robert-regular text-blue-100'>
-                            Enter the Metagame Layer <br /> Unleash the Play Economy
+                        <p className='mb-5 max-w-64 font-robert-regular text-white'>
+                            De 14 a 17 de Novembro <br /> Espaço Mitra
                         </p>
 
                         <Button
@@ -163,8 +163,8 @@ const Hero = () => {
             </div>
 
             <h1 className='special-font hero-heading absolute bottom-5 right-5
-            text-black-75'>
-                G<b>a</b>ming
+            text-red-500'>
+                <b>W</b>orten
             </h1>
         </div>
     )

@@ -29,11 +29,12 @@ const About = () => {
     <div id='about' className='min-h-screen w-screen'>
         <div className='relative mb-8 mt-36 flex flex-col items-center gap-5'>
             <h2 className='font-general text-sm uppercase md:text-[10px]'>
-                Welcom to Zentry
+                Bem-vindo ao XL Games
             </h2>
 
             <AnimatedTitle 
-                title="Disc<b>o</b>ver the world's <br /> <b>l</b>argest shared adventure"
+                title="Entra dentro do <br /> <b>m</b>aior evento <br /> de <b>v</b>ideo<b>j</b>ogos em <b>P</b>ortugal"
+                highlightWords="maior evento"
                 containerClass="mt-5 !text-black text-center"
             />
 

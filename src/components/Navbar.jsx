@@ -3,6 +3,7 @@ import { TiLocationArrow } from 'react-icons/ti';
 import Button from './Button';
 import { useWindowScroll } from 'react-use';
 import gsap from 'gsap';
+import { IoTicket } from "react-icons/io5";
 
 const navItems = ['Nexus', 'Vault', 'Prologue', 'About', 'Contact'];
 
@@ -64,10 +65,10 @@ const Navbar = () => {
                     <div className='flex items-center gap-7'>
                         <img src="/img/logo.png" alt="logo" className='w-10' />
                         <Button
-                            id='product-button'
-                            title='Products'
-                            rightIcon={<TiLocationArrow />}
-                            containerClass='bg-blue-50 md:flex hidden items-center justify-center gap-1'
+                            id='tickets-button'
+                            title='Bilheteira'
+                            rightIcon={<IoTicket />}
+                            containerClass='text-white bg-red-500 md:flex hidden items-center justify-center gap-1'
                         />
                     </div>
 

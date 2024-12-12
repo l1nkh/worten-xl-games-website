@@ -82,10 +82,10 @@ const Features = () => {
                 rounded-md md:h-[65vh]">
                     <BentoCard
                         src="videos/feature-1.mp4"
-                        title={<>radia<b>n</b>t</>}
-                        description="A cross-platform metagame app, turning app,
-                        turning your activities across Web2 and Web3 games into 
-                        a rewarding adventure."
+                        title={<><b>V</b>ideo<b>J</b>ogos</>}
+                        description="Experimenta os mais diversos títulos,
+                        como Spider-Man 2, Gran Turismo 7, Call of Duty: MWIII
+                        e muito mais..."
                     />
                 </BentoTilt>
 
