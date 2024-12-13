@@ -163,7 +163,7 @@ const Hero = () => {
             </div>
 
             <h1 className='special-font hero-heading absolute bottom-5 right-5
-            text-red-500'>
+            text-red-600'>
                 <b>W</b>orten
             </h1>
         </div>

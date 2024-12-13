@@ -68,7 +68,7 @@ const Navbar = () => {
                             id='tickets-button'
                             title='Bilheteira'
                             rightIcon={<IoTicket />}
-                            containerClass='text-white bg-red-500 md:flex hidden items-center justify-center gap-1'
+                            containerClass='text-white !bg-red-600 md:flex hidden items-center justify-center gap-1'
                         />
                     </div>
 

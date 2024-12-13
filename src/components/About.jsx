@@ -39,8 +39,7 @@ const About = () => {
             />
 
             <div className='about-subtext'>
-                <p>The Game of Games begins-your life, now an epic MMORPG</p>
-                <p>Zentry unites every player from countless games and platforms</p>
+                <p>O XL Games está em contagem decrescente para a sua grande edição anual, em Lisboa</p>
             </div>
         </div>
 

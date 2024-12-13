@@ -40,7 +40,7 @@ const AnimatedTitle = ({ title, containerClass, highlightWords = [] }) => {
             return (
               <span
                 key={i}
-                className={`animated-word ${isHighlighted ? 'text-red-500' : ''}`}
+                className={`animated-word ${isHighlighted ? 'text-red-600' : ''}`}
                 dangerouslySetInnerHTML={{ __html: word }}
               />
             );

@@ -1,12 +1,18 @@
 import React, { useRef } from 'react';
 import AnimatedTitle from './AnimatedTitle';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import RoundedCorners from './RoundedCorners';
 import Button from './Button';
+
+import { ScrollTrigger } from 'gsap/all';
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Story = () => {
 
     const frameRef = useRef('null');
+    const textRef = useRef('null');
 
     const handleMouseLeave = () => {
         const element = frameRef.current;
@@ -40,8 +46,45 @@ const Story = () => {
         })
     };
 
+    useGSAP(() => {
+        gsap.to('#story-section', {
+            backgroundColor: 'white',
+            color:'black',
+            scrollTrigger: {
+                trigger: '#story-section',
+                start: 'center center',
+                end: 'center center',
+                scrub: true,
+            }
+        });
+    }, { revertOnUpdate: true });
+    useGSAP(() => {
+        gsap.to(textRef.current, {
+            color:'black',
+            scrollTrigger: {
+                trigger: '#story-section',
+                start: 'center center',
+                end: 'center center',
+                scrub: true,
+            }
+        });
+    }, { revertOnUpdate: true });
+    useGSAP(() => {
+        gsap.to('#realm-btn', {
+            backgroundColor:'black',
+            color: 'white',
+            scrollTrigger: {
+                trigger: '#story-section',
+                start: 'center center',
+                end: 'center center',
+                scrub: true,
+            }
+        });
+    }, { revertOnUpdate: true });
+
+
     return (
-        <section className='min-h-dvh w-screen bg-black text-blue-50'>
+        <section id='story-section' className='min-h-dvh w-screen bg-black text-blue-50'>
             <div className='flex size-full flex-col items-center py-10 pb-24'>
                 <p className='font-general text-sm uppercase md:text-[10px]'>the multiversal ip world</p>
 
@@ -77,7 +120,7 @@ const Story = () => {
                 md:-mt-64 md:me-44 md:justify-end'>
                     <div className="flex h-full w-fit flex-col items-center
                     md:items-start">
-                        <p className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start">
+                        <p ref={textRef} className="mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start">
                             Where realms converge, lies Zentry and the boundless pillar.
                             Discover its secrets and shape your fate amidst infinite
                             opportunities.
