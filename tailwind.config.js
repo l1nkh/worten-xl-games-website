@@ -27,6 +27,9 @@ export default {
         yellow:{
           100: '#8E983F',
           300: '#EDFF66'
+        },
+        red:{
+          600: '#db0010'
         }
 
       }
