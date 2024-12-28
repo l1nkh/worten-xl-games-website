@@ -77,9 +77,9 @@ const Partners = () => {
                             if (item.partnerType === 'sponsor') {
                                 return (
                                     <span key={index} className="text-justify">
-                                        <b>Os nossos patrocinadores</b> cobrem os 
+                                        <b>Os nossos patrocinadores</b> cobrem os
                                         setores de tecnologia, jogos, entretenimento
-                                        e restauração, permitindo uma melhor 
+                                        e restauração, permitindo uma melhor
                                         experiência aos visitantes e jogadores."
                                     </span>
                                 );
@@ -97,34 +97,32 @@ const Partners = () => {
                         }
                     })}
                 </div>
-                <div className='grid grid-cols-2 gap-4 col-span-1'>
-                    <div className='flex flex-start flex-row col-span-1'>
-                        <div>
-                            <h1 className='bento-title special-font text-black'>
-                                Parceiros
-                            </h1>
-                            <ul className='relative flex flex-col items-start'>
-                                {partnersList.map((item, index) => (
-                                    <li
-                                        key={index}
-                                        ref={(el) => (itemsRef.current[index] = el)}
-                                        className={`text-black ${index === 0 ? 'text-red-600' : ''} flex items-center justify-between`}
-                                    >
-                                        <aside className='absolute uppercase right-full font-general whitespace-nowrap mr-4 text-base'>
-                                            {item.partnerType}
-                                        </aside>
-                                        <div className={`text-center bento-title !leading-[0.9]`}>
-                                            {item.name}
-                                        </div>
-                                        <img
-                                            src={`img/PartnerLogos/${item.name}.png`}
-                                            alt={partnersList[highlightedItemId]?.name}
-                                            className={`absolute h-16 mx-[40rem] ${highlightedItemId === index ? 'inline' : 'hidden'}`}
-                                        />
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                <div className='flex flex-start flex-row col-span-1'>
+                    <div>
+                        <h1 className='bento-title special-font text-black'>
+                            Parceiros
+                        </h1>
+                        <ul className='relative flex flex-col items-start'>
+                            {partnersList.map((item, index) => (
+                                <li
+                                    key={index}
+                                    ref={(el) => (itemsRef.current[index] = el)}
+                                    className={`text-black ${index === 0 ? 'text-red-600' : ''} flex items-center justify-between`}
+                                >
+                                    <aside className='absolute uppercase right-full font-general whitespace-nowrap mr-4 text-base'>
+                                        {item.partnerType}
+                                    </aside>
+                                    <div className={`text-center bento-title !leading-[0.9]`}>
+                                        {item.name}
+                                    </div>
+                                    <img
+                                        src={`img/PartnerLogos/${item.name}.png`}
+                                        alt={partnersList[highlightedItemId]?.name}
+                                        className={`absolute h-16 mx-[40rem] ${highlightedItemId === index ? 'inline' : 'hidden'}`}
+                                    />
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </div>
