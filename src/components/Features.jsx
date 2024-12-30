@@ -1,6 +1,10 @@
 import React, { useState, useRef } from 'react';
 import { TiLocationArrow } from 'react-icons/ti';
 
+const handleVideoEnd = (e) => {
+    e.target.play();
+};
+
 
 const BentoTilt = ({ children, className = '' }) => {
     const [transformStyle, setTransformStyle] = useState('');
@@ -104,7 +108,7 @@ const Features = () => {
                     md:ms-0">
                         <BentoCard
                             src="videos/feature-3.mp4"
-                            title={<>n<b>e</b>xus</>}
+                            title={<><b>m</b>aster <b>l</b>eague</>}
                             description="A gamified social hub, adding a new dimension
                             of play to social interaction for Web3 communities."
                         />

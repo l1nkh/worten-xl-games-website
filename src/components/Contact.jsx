@@ -49,7 +49,7 @@ const Contact = () => {
 
                     <Button
                         title="Contácta-nos"
-                        containerClass="mt-10 cursor-pointer bg-red-600 text-white"
+                        containerClass="mt-10 cursor-pointer !bg-red-600 text-white"
                     />
 
                 </div>
