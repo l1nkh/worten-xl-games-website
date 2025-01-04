@@ -71,7 +71,7 @@ const Partners = () => {
     return (
         <section id='partners' className='min-h-screen w-screen py-72 bg-white text-black'>
             <div className="grid grid-cols-2 gap-4">
-                <div className="flex justify-self-end items-center w-1/2 col-span-1 pr-64">
+                <div className="w-1/2 col-span-1 pr-64 hidden md:flex justify-self-end items-center">
                     {partnersList.map((item, index) => {
                         if (highlightedItemId === index) {
                             if (item.partnerType === 'sponsor') {
@@ -97,7 +97,7 @@ const Partners = () => {
                         }
                     })}
                 </div>
-                <div className='flex flex-start flex-row col-span-1'>
+                <div className='flex flex-col items-center col-span-2 md:col-span-1 md:flex-row'>
                     <div>
                         <h1 className='bento-title special-font text-black'>
                             Parceiros
@@ -109,7 +109,7 @@ const Partners = () => {
                                     ref={(el) => (itemsRef.current[index] = el)}
                                     className={`text-black ${index === 0 ? 'text-red-600' : ''} flex items-center justify-between`}
                                 >
-                                    <aside className='absolute uppercase right-full font-general whitespace-nowrap mr-4 text-base'>
+                                    <aside className='hidden absolute uppercase right-full font-general whitespace-nowrap mr-4 text-base md:block'>
                                         {item.partnerType}
                                     </aside>
                                     <div className={`text-center bento-title !leading-[0.9]`}>
@@ -118,7 +118,7 @@ const Partners = () => {
                                     <img
                                         src={`img/PartnerLogos/${item.name}.png`}
                                         alt={partnersList[highlightedItemId]?.name}
-                                        className={`absolute h-16 mx-[40rem] ${highlightedItemId === index ? 'inline' : 'hidden'}`}
+                                        className={`hidden absolute h-16 mx-[40rem] ${highlightedItemId === index ? 'md:inline' : 'md:hidden'}`}
                                     />
                                 </li>
                             ))}
