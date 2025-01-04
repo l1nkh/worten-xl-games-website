@@ -109,17 +109,19 @@ const Features = () => {
                         <BentoCard
                             src="videos/feature-3.mp4"
                             title={<><b>m</b>aster <b>l</b>eague</>}
-                            description="A gamified social hub, adding a new dimension
-                            of play to social interaction for Web3 communities."
+                            description="Assista aos melhores jogadores de ESPORTS
+                             em ação na competição de mais alto nível no nosso
+                             país."
                         />
                     </BentoTilt>
                     <BentoTilt className="bento-tilt_1 me-32 md:col-span-1
                     md:me-0">
                         <BentoCard
                             src="videos/feature-4.mp4"
-                            title={<>az<b>u</b>l</>}
-                            description="A cross-world AI Agent - elevating your
-                            gameplay to be more fun and productive."
+                            title={<>Jogos <b>RETRO</b></>}
+                            description="Reviva a nostalgia dos clássicos! Venha
+                             ao evento e experimente os melhores jogos retro que
+                              marcaram gerações!"
                         />
                     </BentoTilt>
                     <BentoTilt className="bento-tilt_2">
