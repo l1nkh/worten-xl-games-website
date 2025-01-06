@@ -69,7 +69,7 @@ const Partners = () => {
     }, { revertOnUpdate: true });
 
     return (
-        <section id='partners' className='min-h-screen w-screen py-72 bg-white text-black'>
+        <section id='parceiros' className='min-h-screen w-screen py-72 bg-white text-black'>
             <div className="grid grid-cols-2 gap-4">
                 <div className="w-1/2 col-span-1 pr-64 hidden md:flex justify-self-end items-center">
                     {partnersList.map((item, index) => {

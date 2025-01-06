@@ -1,11 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { TiLocationArrow } from 'react-icons/ti';
 
-const handleVideoEnd = (e) => {
-    e.target.play();
-};
-
-
 const BentoTilt = ({ children, className = '' }) => {
     const [transformStyle, setTransformStyle] = useState('');
     const itemRef = useRef(null);
@@ -40,13 +35,31 @@ const BentoTilt = ({ children, className = '' }) => {
 }
 
 const BentoCard = ({ src, title, description }) => {
+
+    const videoRef = useRef(null);
+
+    const handleMouseEnter = () => {
+        if (videoRef.current) {
+            videoRef.current.play();
+        }
+    };
+
+    const handleMouseLeave = () => {
+        if (videoRef.current) {
+            videoRef.current.pause();
+            videoRef.current.currentTime = 0;
+        }
+    };
+
     return (
-        <div className='relative size-full'>
+        <div className='relative size-full'
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}>
             <video
+                ref={videoRef}
                 src={src}
                 loop
                 muted
-                autoPlay
                 className='absolute left-0 top-0 size-full object-cover object'
             />
             <div className="relative z-10 flex size-full flex-col justify-between
@@ -69,7 +82,7 @@ const BentoCard = ({ src, title, description }) => {
 
 const Features = () => {
     return (
-        <section className='bg-black pb-52'>
+        <section id='atividades' className='bg-black pb-52'>
             <div className="container mx-auto px-3 md:px-10">
                 <div className="px-5 py-32">
                     <p className="font-circular-web text-lg text-blue-50">
@@ -98,9 +111,9 @@ const Features = () => {
                     md:row-span-2">
                         <BentoCard
                             src="videos/feature-2.mp4"
-                            title={<>zig<b>m</b>a</>}
-                            description="An anime and gaming-inspired NFT collection
-                             - the IP primed for"
+                            title={<>Cri<b>a</b>dores de <b>C</b>onteudo</>}
+                            description="Vem conhecer os teus criadores de conteúdo
+                            favoritos."
                         />
                     </BentoTilt>
 
@@ -126,21 +139,21 @@ const Features = () => {
                     </BentoTilt>
                     <BentoTilt className="bento-tilt_2">
                         <div className="flex size-full flex-col justify-between
-                        bg-violet-300 p-5">
-                            <h1 className='bento-title special-font max-w-64 text-black'>
-                                M<b>o</b>re co<b>m</b>ing s<b>o</b>on!
+                        bg-red-600 p-5">
+                            <h1 className='bento-title special-font max-w-64 text-white'>
+                                M<b>a</b>is no<b>v</b>idades em <b>breve</b>!
                             </h1>
-                            <TiLocationArrow className='m-5 scale-[5] self-end' />
+                            <TiLocationArrow className='m-5 scale-[5] self-end text-white' />
                         </div>
                     </BentoTilt>
 
                     <BentoTilt className="bento-tilt_2">
-                        <video
+                        <BentoCard
                             src="videos/feature-5.mp4"
-                            loop
-                            muted
-                            autoPlay
-                            className='size-full object-cover object-center'
+                            title={<>Realidade <b>Virtual</b></>}
+                            description="Entre no mundo da realidade virtual! 
+                            Experimente atividades e jogos imersivos com óculos VR
+                             e descubra uma nova dimensão de diversão."
                         />
                     </BentoTilt>
                 </div>

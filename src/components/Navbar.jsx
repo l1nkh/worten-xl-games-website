@@ -5,7 +5,7 @@ import { useWindowScroll } from 'react-use';
 import gsap from 'gsap';
 import { IoTicket } from "react-icons/io5";
 
-const navItems = ['Nexus', 'Vault', 'Prologue', 'About', 'Contact'];
+const navItems = ['Atividades', 'Parceiros', 'x', 'Sobre', 'Contactos'];
 
 const Navbar = () => {
     const [isAudioPlaying, setIsAudioPlaying] = useState(false);
