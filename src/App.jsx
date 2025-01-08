@@ -6,6 +6,7 @@ import Story from './components/Story.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import Partners from './components/Partners.jsx'
+import Location from './components/Location.jsx';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Hero />
       <About />
       <Features />
+      <Location />
       <Story />
       <Partners />
       <Contact />
