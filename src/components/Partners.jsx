@@ -42,14 +42,14 @@ const Partners = () => {
                     end: "bottom center",
                     toggleActions: "play reverse play reverse",
                     onEnter: () => {
-                        item.classList.add('text-red-600');
+                        item.classList.add('!text-red-600');
                         setHighlightedItemId(index);
                     },
                     onLeave: () => {
                         if (index === itemsRef.current.length - 1) {
-                            item.classList.add('text-red-600');
+                            item.classList.add('!text-red-600');
                         } else {
-                            item.classList.remove('text-red-600');
+                            item.classList.remove('!text-red-600');
                         }
                     },
                     onEnterBack: () => {
@@ -58,9 +58,9 @@ const Partners = () => {
                     },
                     onLeaveBack: () => {
                         if (index === 0) {
-                            item.classList.add('text-red-600');
+                            item.classList.add('!text-red-600');
                         } else {
-                            item.classList.remove('text-red-600');
+                            item.classList.remove('!text-red-600');
                         }
                     },
                 });
@@ -69,7 +69,7 @@ const Partners = () => {
     }, { revertOnUpdate: true });
 
     return (
-        <section id='parceiros' className='min-h-screen w-screen py-72 bg-white text-black'>
+        <section id='parceiros' className='min-h-screen w-screen pt-32 pb-60 bg-black text-white'>
             <div className="grid grid-cols-2 gap-4">
                 <div className="w-1/2 col-span-1 pr-64 hidden md:flex justify-self-end items-center">
                     {partnersList.map((item, index) => {
@@ -99,7 +99,8 @@ const Partners = () => {
                 </div>
                 <div className='flex flex-col items-center col-span-2 md:col-span-1 md:flex-row'>
                     <div>
-                        <h1 className='bento-title special-font text-black'>
+                        <h1 className='bento-title special-font text-white
+'>
                             Parceiros
                         </h1>
                         <ul className='relative flex flex-col items-start'>
@@ -107,7 +108,7 @@ const Partners = () => {
                                 <li
                                     key={index}
                                     ref={(el) => (itemsRef.current[index] = el)}
-                                    className={`text-black ${index === 0 ? 'text-red-600' : ''} flex items-center justify-between`}
+                                    className={`text-white ${index === 0 ? 'text-red-600' : ''} flex items-center justify-between`}
                                 >
                                     <aside className='hidden absolute uppercase right-full font-general whitespace-nowrap mr-4 text-base md:block'>
                                         {item.partnerType}
