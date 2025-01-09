@@ -12,12 +12,12 @@ const Location = () => {
     const [selectedRoute, setSelectedRoute] = useState('default');
 
     useGSAP(() => {
-        gsap.to('#location-section', {
+        gsap.to('#localização', {
             backgroundColor: darkMode ? 'black' : 'white',
             color: darkMode ? 'white' : 'black',
             duration: 0,
             scrollTrigger: {
-                trigger: '#location-section',
+                trigger: '#localização',
                 start: 'center center',
                 end: 'center center',
                 scrub: true,
@@ -89,14 +89,14 @@ const Location = () => {
     }
 
     return (
-        <section id='location-section' className='min-h-dvh w-screen bg-black text-white'>
+        <section id='localização' className='min-h-dvh w-screen bg-black text-white'>
             <div className='flex size-full flex-col items-center py-10'>
                 <AnimatedTitle
                     title='l<b>o</b>c<b>a</b>lizacao'
                     containerClass='mt-5 pointer-events-none mix-blend-difference relative z-10'
                 />
                 <p
-                    className={`col-span-1 text-center text-lg font-light rounded-md mt-24 px-4 py-1 cursor-pointer 
+                    className={`col-span-1 text-center text-lg font-light rounded-full mt-24 px-4 py-1 cursor-pointer 
                         ${(darkMode ? 'hover:bg-white hover:text-black' : 'hover:bg-black hover:text-white')}`}
                     onClick={() => handleRouteChange('default')}
                 >
@@ -117,7 +117,7 @@ const Location = () => {
                         ></iframe>
                     </div>
                     <div id='location-description' className='col-span-2 xl:col-span-1'>
-                        <div className="inline-flex rounded-md">
+                        <div className="inline-flex rounded-full">
                             <button
                                 type="button"
                                 className={`px-4 py-2 text-sm font-medium
