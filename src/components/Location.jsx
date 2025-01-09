@@ -8,27 +8,60 @@ import { ScrollTrigger } from 'gsap/all';
 gsap.registerPlugin(ScrollTrigger)
 
 const Location = () => {
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(true);
     const [selectedRoute, setSelectedRoute] = useState('default');
 
     useGSAP(() => {
         gsap.to('#location-section', {
-            backgroundColor: darkMode ? 'white' : 'black',
-            color: darkMode ? 'black' : 'white',
+            backgroundColor: darkMode ? 'black' : 'white',
+            color: darkMode ? 'white' : 'black',
             duration: 0,
             scrollTrigger: {
                 trigger: '#location-section',
                 start: 'center center',
                 end: 'center center',
                 scrub: true,
-                onEnter: () => setDarkMode(true),
-                onLeaveBack: () => setDarkMode(false),
+                onEnter: () => setDarkMode(false),
+                onLeaveBack: () => setDarkMode(true),
             }
         });
     }, [darkMode]);
 
+    useGSAP(() => {
+        gsap.from('#locationMap', {
+            y: 100, // Starts 100px below its original position
+            opacity: 0, // Starts fully transparent
+            filter: darkMode ? 'invert(90%) hue-rotate(180deg)' : 'none',
+            transformOrigin: 'center center',
+            duration: 1.5, // Animation duration
+            ease: 'power1.inOut', // Easing for smooth animation
+            scrollTrigger: {
+                trigger: '#locationMap', // The element to watch for scrolling
+                start: 'top bottom', // Start animation when the top of the element enters the bottom of the viewport
+                end: 'top center', // End animation when the top of the element reaches the center of the viewport
+                toggleActions: 'play none none reverse', // Play animation on scroll and do nothing on reverse
+            },
+        });
+
+        gsap.from('#location-description', {
+            x: 100, // Starts 100px below its original position
+            opacity: 0, // Starts fully transparent
+            transformOrigin: 'center center',
+            duration: 1.5, // Animation duration
+            ease: 'power1.inOut', // Easing for smooth animation
+            scrollTrigger: {
+                trigger: '#locationMap', // The element to watch for scrolling
+                start: 'top bottom', // Start animation when the top of the element enters the bottom of the viewport
+                end: 'top center', // End animation when the top of the element reaches the center of the viewport
+                toggleActions: 'play none none reverse', // Play animation on scroll and do nothing on reverse
+            },
+        });
+
+    }, []);
+
     const handleRouteChange = (route) => {
         setSelectedRoute(route);
+        console.log(darkMode);
     };
 
     const getIframeSrc = () => {
@@ -56,69 +89,98 @@ const Location = () => {
     }
 
     return (
-        <section id='location-section' className='minn-h-screen w-screen py-72 bg-black text-white'>
-            <div className='container mx-auto flex flex-col items-center gap-4'>
+        <section id='location-section' className='min-h-dvh w-screen bg-black text-white'>
+            <div className='flex size-full flex-col items-center py-10'>
                 <AnimatedTitle
                     title='l<b>o</b>c<b>a</b>lizacao'
                     containerClass='mt-5 pointer-events-none mix-blend-difference relative z-10'
                 />
-                <p 
-                    className='text-center text-lg font-light rounded-full px-4 py-1 cursor-pointer hover:bg-black hover:text-white'
+                <p
+                    className={`col-span-1 text-center text-lg font-light rounded-md mt-24 px-4 py-1 cursor-pointer 
+                        ${(darkMode ? 'hover:bg-white hover:text-black' : 'hover:bg-black hover:text-white')}`}
                     onClick={() => handleRouteChange('default')}
                 >
                     Beco da Mitra, 1950-051 Lisboa
                 </p>
-                <div className="inline-flex rounded-full" role="group">
-                    <button
-                        type="button"
-                        className={`px-4 py-2 text-sm font-medium
+                <div className='grid grid-cols-2 gap-x-16 mt-7'>
+                    <div className='col-span-2 xl:col-span-1'>
+                        <iframe
+                            id='locationMap'
+                            title='locationMap'
+                            src={getIframeSrc()}
+                            className='rounded-md'
+                            width='600'
+                            height='450'
+                            style={{ border: 0, filter: darkMode ? 'invert(90%) hue-rotate(180deg)' : 'none' }}
+                            allowFullScreen=''
+                            loading='lazy'
+                        ></iframe>
+                    </div>
+                    <div id='location-description' className='col-span-2 xl:col-span-1'>
+                        <div className="inline-flex rounded-md">
+                            <button
+                                type="button"
+                                className={`px-4 py-2 text-sm font-medium
                             ${selectedRoute === 'cascaisOeiras' ?
-                                'bg-black text-white' :
-                                'bg-white text-black'}
-                            rounded-s-full
-                            border-2 border-black
-                            hover:bg-black hover:text-white`}
-                        onClick={() => handleRouteChange('cascaisOeiras')}
-                    >
-                        Cascais/Oeiras
-                    </button>
-                    <button
-                        type="button"
-                        className={`px-4 py-2 text-sm font-medium 
-                            ${selectedRoute === 'linhaAzambuja' ?
-                                'bg-black text-white' :
-                                'bg-white text-black'
-                            }
-                            border-y-2 border-black
-                            hover:bg-black hover:text-white`}
-                        onClick={() => handleRouteChange('linhaAzambuja')}
-                    >
-                        Linha da Azambuja
-                    </button>
-                    <button
-                        type="button"
-                        className={`px-4 py-2 text-sm font-medium 
+                                        (darkMode ? 'bg-white text-black' : 'bg-black text-white') :
+                                        (darkMode ? 'bg-black text-white' : 'bg-white text-black')
+                                    }
+                            rounded-s-md
+                            border-2 ${darkMode ? 'border-white' : 'border-black'}
+                            ${darkMode ? 'hover:bg-white hover:text-black' : 'hover:bg-black hover:text-white'}`}
+                                onClick={() => handleRouteChange('cascaisOeiras')}
+                            >
+                                Cascais/Oeiras
+                            </button>
+                            <button
+                                type="button"
+                                className={`px-4 py-2 text-sm font-medium
+                              ${selectedRoute === 'linhaAzambuja' ?
+                                        (darkMode ? 'bg-white text-black' : 'bg-black text-white') :
+                                        (darkMode ? 'bg-black text-white' : 'bg-white text-black')
+                                    }
+                              border-y-2 ${darkMode ? 'border-white' : 'border-black'}
+                              ${darkMode ? 'hover:bg-white hover:text-black' : 'hover:bg-black hover:text-white'}`}
+                                onClick={() => handleRouteChange('linhaAzambuja')}
+                            >
+                                Linha da Azambuja
+                            </button>
+                            <button
+                                type="button"
+                                className={`px-4 py-2 text-sm font-medium
                             ${selectedRoute === 'margemSul' ?
-                                'bg-black text-white' :
-                                'bg-white text-black'
-                            }
-                            rounded-e-full
-                            border-2 border-black
-                            hover:bg-black hover:text-white`}
-                        onClick={() => handleRouteChange('margemSul')}
-                    >
-                        Margem Sul
-                    </button>
+                                        (darkMode ? 'bg-white text-black' : 'bg-black text-white') :
+                                        (darkMode ? 'bg-black text-white' : 'bg-white text-black')
+                                    }
+                            rounded-e-md
+                            border-2 ${darkMode ? 'border-white' : 'border-black'}
+                            ${darkMode ? 'hover:bg-white hover:text-black' : 'hover:bg-black hover:text-white'}`}
+                                onClick={() => handleRouteChange('margemSul')}
+                            >
+                                Margem Sul
+                            </button>
+                        </div>
+                        <p className='w-[600px] mt-5 text-wrap text-justify	'>
+                            A Estação do Braço de Prata é o grande hub de 
+                            transportes para o nosso evento, oferecendo um fácil 
+                            e cómodo acesso a todos os visitantes. Localizada a 
+                            menos de cinco minutos a pé da nova zona 
+                            de Lisboa e dos seus espaços de entretenimento, 
+                            cultura e lazer, faz a ligação entre todas as 
+                            linhas ferroviárias urbanas da grande Lisboa 
+                            (Sintra, Cascais, Azambuja e Fertagus + Estação de 
+                            Sta. Apolónia, com ligação via Metro ou a pé, aos 
+                            transportes marítimos da Margem  Sul) e com as 
+                            principais estações de interface do Metro com a CP, 
+                            como a Gare Oriente (apenas a uma estação de comboio
+                            de distância), Entre Campos (3 estações), Areeiro 
+                            (2 estações) e ainda Sete Rios (4 estações). 
+                            É ainda opção, o transporte directo rodoviário 
+                            através dos autocarros 718, 728, 210,781 e 782 da 
+                            Carris Metropolitana.
+                        </p>
+                    </div>
                 </div>
-                <iframe
-                    title='locationMap'
-                    src={getIframeSrc()}
-                    width='600'
-                    height='450'
-                    style={{ border: 0, filter: darkMode ? 'none' : 'invert(90%) hue-rotate(180deg)' }}
-                    allowFullScreen=''
-                    loading='lazy'
-                ></iframe>
             </div>
         </section>
     )
