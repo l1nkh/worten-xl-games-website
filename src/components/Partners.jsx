@@ -53,7 +53,7 @@ const Partners = () => {
                         }
                     },
                     onEnterBack: () => {
-                        item.classList.add('text-red-600');
+                        item.classList.add('!text-red-600');
                         setHighlightedItemId(index);
                     },
                     onLeaveBack: () => {
