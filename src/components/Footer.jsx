@@ -1,23 +1,23 @@
 import React from 'react'
-import { FaDiscord, FaGithub, FaTwitch } from 'react-icons/fa'
+import { FaDiscord, FaGithub, FaInstagram, FaTwitch } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 
 const links = [
     {
-        href: 'https://discord.com',
-        icon: <FaDiscord />
+        href: 'https://www.instagram.com/xlgames.pt/',
+        icon: <FaInstagram />
     },
     {
-        href: 'https://x.com',
+        href: 'https://x.com/XLgames__',
         icon: <FaXTwitter />
     },
     {
-        href: 'https://github.com',
-        icon: <FaGithub />
+        href: 'https://www.twitch.tv/wortenpt',
+        icon: <FaTwitch />
     },
     {
-        href: 'https://twitch.tv',
-        icon: <FaTwitch />
+        href: 'https://discord.com/invite/gQjKpfmKK4',
+        icon: <FaDiscord />
     },
 ]
 

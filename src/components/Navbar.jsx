@@ -54,12 +54,14 @@ const Navbar = () => {
                         <a href="#home">
                             <img src="/img/logo.png" alt="logo" className='w-10' />
                         </a>
-                        <Button
-                            id='tickets-button'
-                            title='Bilheteira'
-                            rightIcon={<IoTicket />}
-                            containerClass='text-white !bg-red-600 md:flex hidden items-center justify-center gap-1'
-                        />
+                        <a href='https://www.worten.pt/produtos/bilhete-worten-xl-games-8159633' target='_blank' rel='noopener noreferrer'>
+                            <Button
+                                id='tickets-button'
+                                title='Bilheteira'
+                                rightIcon={<IoTicket />}
+                                containerClass='text-white !bg-red-600 md:flex hidden items-center justify-center gap-1'
+                            />
+                        </a>
                     </div>
 
                     <div className='flex h-full items-center'>

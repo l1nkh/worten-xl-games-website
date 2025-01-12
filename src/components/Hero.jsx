@@ -112,6 +112,9 @@ const Hero = () => {
                                     className='size-64 origin-center scale-150
                     object-cover object-center'
                                     onLoadedData={handleVideoLoad}
+                                    webkitallowfullscreen='true'
+                                    mozallowfullscreen='true'
+                                    allowfullscreen='true'
                                 />
                             </div>
                         </div>
@@ -125,6 +128,9 @@ const Hero = () => {
                             className='absolute-center invisible absolute z-20 size-64
                                 object-cover object-center'
                             onLoadedData={handleVideoLoad}
+                            webkitallowfullscreen='true'
+                            mozallowfullscreen='true'
+                            allowfullscreen='true'
                         />
 
                         <video
@@ -136,6 +142,9 @@ const Hero = () => {
                             className='absolute left- top-0 size-full object-cover
                                 object-center'
                             onLoadedData={handleVideoLoad}
+                            webkitallowfullscreen='true'
+                            mozallowfullscreen='true'
+                            allowfullscreen='true'
                         />
                     </div>
 
@@ -153,6 +162,7 @@ const Hero = () => {
                                 De 14 a 17 de Novembro <br /> Espaço Mitra
                             </p>
 
+                            {/* 
                             <Button
                                 id="watch-trailer"
                                 title="Watch Trailer"
@@ -161,6 +171,7 @@ const Hero = () => {
                                 flex-center
                                 gap-1
                             />
+                            */}
                         </div>
                     </div>
                 </div>

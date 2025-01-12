@@ -89,9 +89,9 @@ const Features = () => {
                         Entra maior evento de videojogos em portugal
                     </p>
                     <p className="max-w-md font-circular-web text-lg text-white opacity-50">
-                        Immerse yourself in a rich and ever-expanding universe where
-                        a vibrant array of products converge into an interconnected
-                        overlay experience on your world.
+                    Mergulha numa experiência única onde os maiores torneios, 
+                    as últimas novidades do mundo dos videojogos e os teus 
+                    criadores de conteúdo favoritos se encontram num só lugar. 
                     </p>
                 </div>
 

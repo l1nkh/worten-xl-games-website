@@ -39,7 +39,11 @@ const About = () => {
             />
 
             <div className='about-subtext'>
-                <p>O XL Games está em contagem decrescente para a sua grande edição anual, em Lisboa</p>
+                <p>O XL Games em Lisboa é o destino definitivo para 
+                    gamers e entusiastas, com competições épicas, demonstrações 
+                    exclusivas e uma comunidade vibrante pronta para celebrar o 
+                    universo dos videojogos contigo. Não percas a oportunidade 
+                    de fazer parte desta aventura inesquecível!</p>
             </div>
         </div>
 
