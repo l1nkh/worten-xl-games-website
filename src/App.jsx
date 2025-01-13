@@ -6,11 +6,13 @@ import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import Partners from './components/Partners.jsx'
 import Location from './components/Location.jsx';
+import Alert from './components/Alert.jsx';
 import { AudioProvider } from './components/AudioContext.jsx';
 
 const App = () => {
   return (
     <main className='relative min-h-screen w-screen overflow-x-hidden'>
+      <Alert />
       <AudioProvider>
         <Navbar />
         <Hero />
