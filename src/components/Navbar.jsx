@@ -4,12 +4,14 @@ import Button from './Button';
 import { useWindowScroll } from 'react-use';
 import gsap from 'gsap';
 import { IoTicket } from "react-icons/io5";
-import { AudioContext } from './AudioContext';
+import { AudioContext } from '../contexts/AudioContext';
+import { AlertContext } from '../contexts/AlertContext';
 
 const navItems = ['Atividades', 'Parceiros', 'localização', 'Sobre', 'Contactos'];
 
 const Navbar = () => {
     const { isAudioPlaying, setIsAudioPlaying } = useContext(AudioContext);
+    const { showAlert } = useContext(AlertContext);
     const [isIndicatorActive, setIsIndicatorActive] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isNavVisible, setIsNavVisible] = useState(true);
@@ -47,12 +49,12 @@ const Navbar = () => {
     };
 
     return (
-        <div ref={navContainerRef} className='fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6'>
+        <div ref={navContainerRef} className={`fixed inset-x-0 ${showAlert && currentScrollY === 0 ? 'top-12' : 'top-4'} z-50 h-16 border-none transition-all duration-700 sm:inset-x-6`}>
             <header className='absolute top-1/2 w-full -translate-y-1/2'>
                 <nav className='flex size-full items-center justify-between p-4'>
                     <div className='flex items-center gap-7'>
                         <a href="#home">
-                            <img src="/img/logo.png" alt="logo" className='w-10' />
+                            <img src="src/assets/img/logo.png" alt="logo" className='w-10' />
                         </a>
                         <a href='https://www.worten.pt/produtos/bilhete-worten-xl-games-8159633' target='_blank' rel='noopener noreferrer'>
                             <Button

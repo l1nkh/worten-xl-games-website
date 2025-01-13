@@ -5,7 +5,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 import { ScrollTrigger } from 'gsap/all';
-import { AudioContext } from './AudioContext';
+import { AudioContext } from '../contexts/AudioContext';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -79,7 +79,7 @@ const Hero = () => {
 
     }, { dependencies: [currentIndex], revertOnUpdate: true });
 
-    const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
+    const getVideoSrc = (index) => `src/assets/videos/hero-${index}.mp4`;
 
     return (
         <div id='home'>

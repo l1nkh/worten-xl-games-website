@@ -15,12 +15,12 @@ const Contact = () => {
                 <div className='absolute -left-20 top-0 hidden h-full w-72 overflow-hidden 
             sm:block lg:left-20 lg:w-96'>
                     <ImageClipBox
-                        src="img/contact-3.jpg"
+                        src="src/assets/img/contact-3.jpg"
                         clipClass="contact-clip-path-1"
                         imgClass="relative -top-5 left-5"
                     />
                     <ImageClipBox
-                        src="img/contact-2.jpg"
+                        src="src/assets/img/contact-2.jpg"
                         clipClass="contact-clip-path-2 lg:translate-y-40
                             translate-y-60"
                     />
@@ -29,7 +29,7 @@ const Contact = () => {
                 <div className='absolute -top-[7rem] left-14 w-60
             sm:top-1/2 md:left-auto md:right-10 lg:top-40 lg:w-80'>
                     <ImageClipBox
-                        src="img/contact-1.jpg"
+                        src="src/assets/img/contact-1.jpg"
                         clipClass="contact-clip-path-3 md:scale-125"
                     />
                 </div>

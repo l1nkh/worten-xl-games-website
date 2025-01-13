@@ -117,7 +117,7 @@ const Partners = () => {
                                         {item.name}
                                     </div>
                                     <img
-                                        src={`img/PartnerLogos/${item.name}.png`}
+                                        src={`src/assets/img/PartnerLogos/${item.name}.png`}
                                         alt={partnersList[highlightedItemId]?.name}
                                         className={`hidden absolute h-16 mx-[40rem] ${highlightedItemId === index ? 'md:inline' : 'md:hidden'}`}
                                     />

@@ -1,10 +1,11 @@
-import {React, useState} from 'react'
+import {React, useState, useContext} from 'react'
 import { IoMdClose } from "react-icons/io";
+import { AlertContext } from '../contexts/AlertContext';
 
 
 const Alert = () => {
 
-    const [showAlert, setShowAlert] = useState(true);
+    const { showAlert, setShowAlert } = useContext(AlertContext);
 
     const handleClick = () => {
         setShowAlert(false);

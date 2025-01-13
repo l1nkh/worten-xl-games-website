@@ -12,5 +12,3 @@ export const AudioProvider = ({ children }) => {
         </AudioContext.Provider>
     );
 };
-
-export default AudioContext;

@@ -7,16 +7,20 @@ import Footer from './components/Footer.jsx';
 import Partners from './components/Partners.jsx'
 import Location from './components/Location.jsx';
 import Alert from './components/Alert.jsx';
-import { AudioProvider } from './components/AudioContext.jsx';
+import { AudioProvider } from './contexts/AudioContext.jsx';
+import { AlertProvider } from './contexts/AlertContext.jsx';
 
 const App = () => {
   return (
     <main className='relative min-h-screen w-screen overflow-x-hidden'>
-      <Alert />
-      <AudioProvider>
-        <Navbar />
-        <Hero />
-      </AudioProvider>
+
+      <AlertProvider>
+        <Alert />
+        <AudioProvider>
+          <Navbar />
+          <Hero />
+        </AudioProvider>
+      </AlertProvider>
       <About />
       <Features />
       <Partners />
