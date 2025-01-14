@@ -1,14 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { React, useEffect, useRef, useState, useContext } from 'react'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import AnimatedTitle from './AnimatedTitle';
+import { ThemeContext } from '../contexts/ColorThemeContext.jsx';
 
 import { ScrollTrigger } from 'gsap/all';
 
 gsap.registerPlugin(ScrollTrigger)
 
 const Location = () => {
-    const [darkMode, setDarkMode] = useState(true);
+    const { darkMode, setDarkMode } = useContext(ThemeContext);
     const [selectedRoute, setSelectedRoute] = useState('default');
 
     useGSAP(() => {
@@ -89,8 +90,8 @@ const Location = () => {
     }
 
     return (
-        <section id='localização' className='min-h-dvh w-screen bg-black text-white'>
-            <div className='flex size-full flex-col items-center py-10 md:size-full'>
+        <section id='localização' className='min-h-[60vh] w-screen bg-black text-white'>
+            <div className='flex size-full flex-col items-center md:size-full'>
                 <AnimatedTitle
                     title='l<b>o</b>c<b>a</b>lizacao'
                     containerClass='mt-5 pointer-events-none mix-blend-difference relative z-10'

@@ -1,5 +1,6 @@
-import React from 'react'
+import { React, useContext } from 'react';
 import Button from './Button.jsx'
+import { ThemeContext } from '../contexts/ColorThemeContext.jsx';
 
 const ImageClipBox = ({ src, clipClass, imgClass }) => (
     <div className={clipClass}>
@@ -8,8 +9,11 @@ const ImageClipBox = ({ src, clipClass, imgClass }) => (
 )
 
 const Contact = () => {
+
+    const { darkMode, setDarkMode } = useContext(ThemeContext);
+
     return (
-        <div id="contactos" className='my-20 min-h-96 w-screen px-10'>
+        <div id="contactos" className={`${darkMode ? 'bg-black py-20' : 'bg-white py-20'}  min-h-96 w-screen px-10`}>
             <div className="relative rounded-lg bg-black py-24 text-white
         sm:overflow-hidden">
                 <div className='absolute -left-20 top-0 hidden h-full w-72 overflow-hidden 

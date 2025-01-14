@@ -9,6 +9,7 @@ import Location from './components/Location.jsx';
 import Alert from './components/Alert.jsx';
 import { AudioProvider } from './contexts/AudioContext.jsx';
 import { AlertProvider } from './contexts/AlertContext.jsx';
+import { ThemeProvider } from './contexts/ColorThemeContext.jsx';
 
 const App = () => {
   return (
@@ -24,8 +25,10 @@ const App = () => {
       <About />
       <Features />
       <Partners />
-      <Location />
-      <Contact />
+      <ThemeProvider>
+        <Location />
+        <Contact />
+      </ThemeProvider>
       <Footer />
     </main>
   )
