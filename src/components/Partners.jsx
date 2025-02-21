@@ -80,7 +80,7 @@ const Partners = () => {
                                         <b>Os nossos patrocinadores</b> cobrem os
                                         setores de tecnologia, jogos, entretenimento
                                         e restauração, permitindo uma melhor
-                                        experiência aos visitantes e jogadores."
+                                        experiência aos visitantes e jogadores.
                                     </span>
                                 );
                             } else {
@@ -99,8 +99,7 @@ const Partners = () => {
                 </div>
                 <div className='flex flex-col items-center col-span-2 md:col-span-1 md:flex-row'>
                     <div>
-                        <h1 className='bento-title special-font text-white
-'>
+                        <h1 className='bento-title special-font text-white'>
                             Parceiros
                         </h1>
                         <ul className='relative flex flex-col items-start'>
@@ -108,7 +107,7 @@ const Partners = () => {
                                 <li
                                     key={index}
                                     ref={(el) => (itemsRef.current[index] = el)}
-                                    className={`text-white ${index === 0 ? 'text-red-600' : ''} flex items-center justify-between`}
+                                    className={`text-white ${index === 0 ? '!text-red-600' : ''} flex items-center justify-between`}
                                 >
                                     <aside className='hidden absolute uppercase right-full font-general whitespace-nowrap mr-4 text-base md:block'>
                                         {item.partnerType}
