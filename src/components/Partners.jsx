@@ -3,31 +3,54 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 
+import wortenLogo from 'src/assets/img/PartnerLogos/worten.png';
+import meoLogo from 'src/assets/img/PartnerLogos/meo.png';
+import agonLogo from 'src/assets/img/PartnerLogos/agon.png';
+import monsterEnergyLogo from 'src/assets/img/PartnerLogos/monster energy.png';
+import escOnlineLogo from 'src/assets/img/PartnerLogos/esc online.png';
+import banzaiNoodleLogo from 'src/assets/img/PartnerLogos/banzai noodle.png';
+import noblechairsLogo from 'src/assets/img/PartnerLogos/noblechairs.png';
+import prozisLogo from 'src/assets/img/PartnerLogos/prozis.png';
+import forceByInsysLogo from 'src/assets/img/PartnerLogos/force by insys.png';
+import sushiPokeLogo from 'src/assets/img/PartnerLogos/sushi & poke.png';
+import cidadeFmLogo from 'src/assets/img/PartnerLogos/cidade fm.png';
+import rtpArenaLogo from 'src/assets/img/PartnerLogos/rtp arena.png';
+import santaCasaLogo from 'src/assets/img/PartnerLogos/santa casa.png';
+import lenovoLegionLogo from 'src/assets/img/PartnerLogos/lenovo legion.png';
+import e2techLogo from 'src/assets/img/PartnerLogos/e2tech.png';
+import actigamerLogo from 'src/assets/img/PartnerLogos/actigamer.png';
+import otakuptLogo from 'src/assets/img/PartnerLogos/otakupt.png';
+import centralComicsLogo from 'src/assets/img/PartnerLogos/central comics.png';
+import oitobitsLogo from 'src/assets/img/PartnerLogos/oitobits.org.png';
+import wasdLogo from 'src/assets/img/PartnerLogos/wasd.png';
+import salaoJogosLogo from 'src/assets/img/PartnerLogos/salao de jogos.png';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const partnersList = [
-    { name: "worten", partnerType: 'sponsor' },
-    { name: "meo", partnerType: 'sponsor' },
-    { name: "agon", partnerType: 'sponsor' },
-    { name: "monster energy", partnerType: 'sponsor' },
-    { name: "esc online", partnerType: 'sponsor' },
-    { name: "banzai noodle", partnerType: 'sponsor' },
-    { name: "noblechairs", partnerType: 'sponsor' },
-    { name: "prozis", partnerType: 'sponsor' },
-    { name: "force by insys", partnerType: 'sponsor' },
-    { name: "sushi & poke", partnerType: 'sponsor' },
-    { name: "cidade fm", partnerType: 'sponsor' },
-    { name: "rtp arena", partnerType: 'sponsor' },
-    { name: "santa casa", partnerType: 'sponsor' },
-    { name: "lenovo legion", partnerType: 'sponsor' },
-    { name: "e2tech", partnerType: 'sponsor' },
-    { name: "actigamer", partnerType: 'media' },
-    { name: "otakupt", partnerType: 'media' },
-    { name: "central comics", partnerType: 'media' },
-    { name: "oitobits.org", partnerType: 'media' },
-    { name: "wasd", partnerType: 'media' },
-    { name: "salao de jogos", partnerType: 'media' }
+  { name: "worten", partnerType: 'sponsor', logo: wortenLogo },
+  { name: "meo", partnerType: 'sponsor', logo: meoLogo },
+  { name: "agon", partnerType: 'sponsor', logo: agonLogo },
+  { name: "monster energy", partnerType: 'sponsor', logo: monsterEnergyLogo },
+  { name: "esc online", partnerType: 'sponsor', logo: escOnlineLogo },
+  { name: "banzai noodle", partnerType: 'sponsor', logo: banzaiNoodleLogo },
+  { name: "noblechairs", partnerType: 'sponsor', logo: noblechairsLogo },
+  { name: "prozis", partnerType: 'sponsor', logo: prozisLogo },
+  { name: "force by insys", partnerType: 'sponsor', logo: forceByInsysLogo },
+  { name: "sushi & poke", partnerType: 'sponsor', logo: sushiPokeLogo },
+  { name: "cidade fm", partnerType: 'sponsor', logo: cidadeFmLogo },
+  { name: "rtp arena", partnerType: 'sponsor', logo: rtpArenaLogo },
+  { name: "santa casa", partnerType: 'sponsor', logo: santaCasaLogo },
+  { name: "lenovo legion", partnerType: 'sponsor', logo: lenovoLegionLogo },
+  { name: "e2tech", partnerType: 'sponsor', logo: e2techLogo },
+  { name: "actigamer", partnerType: 'media', logo: actigamerLogo },
+  { name: "otakupt", partnerType: 'media', logo: otakuptLogo },
+  { name: "central comics", partnerType: 'media', logo: centralComicsLogo },
+  { name: "oitobits.org", partnerType: 'media', logo: oitobitsLogo },
+  { name: "wasd", partnerType: 'media', logo: wasdLogo },
+  { name: "salao de jogos", partnerType: 'media', logo: salaoJogosLogo },
 ];
+
 
 const Partners = () => {
     const itemsRef = useRef([]);
@@ -116,7 +139,7 @@ const Partners = () => {
                                         {item.name}
                                     </div>
                                     <img
-                                        src={`src/assets/img/PartnerLogos/${item.name}.png`}
+                                        src={item.logo}
                                         alt={partnersList[highlightedItemId]?.name}
                                         className={`hidden absolute h-16 mx-[40rem] ${highlightedItemId === index ? 'md:inline' : 'md:hidden'}`}
                                     />

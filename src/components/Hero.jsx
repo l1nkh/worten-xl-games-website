@@ -7,6 +7,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { AudioContext } from '../contexts/AudioContext';
 
+import hero1 from '../assets/videos/hero-1.mp4';
+
+
 gsap.registerPlugin(ScrollTrigger)
 
 const Hero = () => {
@@ -64,7 +67,7 @@ const Hero = () => {
                 <div id='video-frame' className='relative z-10 h-dvh w-screen
                     overflow-hidden rounded-lg bg-white'>
                     <video
-                        src="src/assets/videos/hero-1.mp4"
+                        src={hero1}
                         autoPlay
                         loop
                         muted={!isAudioPlaying}

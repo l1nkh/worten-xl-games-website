@@ -2,6 +2,10 @@ import { React, useContext } from 'react';
 import Button from './Button.jsx'
 import { ThemeContext } from '../contexts/ColorThemeContext.jsx';
 
+import contact1 from '../assets/img/contact-1.jpg';
+import contact2 from '../assets/img/contact-2.jpg';
+import contact3 from '../assets/img/contact-3.jpg';
+
 const ImageClipBox = ({ src, clipClass, imgClass }) => (
     <div className={clipClass}>
         <img className={imgClass} src={src} />
@@ -19,12 +23,12 @@ const Contact = () => {
                 <div className='absolute -left-20 top-0 hidden h-full w-72 overflow-hidden 
             sm:block lg:left-20 lg:w-96'>
                     <ImageClipBox
-                        src="src/assets/img/contact-3.jpg"
+                        src={contact3}
                         clipClass="contact-clip-path-1"
                         imgClass="relative -top-5 left-5"
                     />
                     <ImageClipBox
-                        src="src/assets/img/contact-2.jpg"
+                        src={contact2}
                         clipClass="contact-clip-path-2 lg:translate-y-40
                             translate-y-60"
                     />
@@ -33,7 +37,7 @@ const Contact = () => {
                 <div className='absolute -top-[7rem] left-14 w-60
             sm:top-1/2 md:left-auto md:right-10 lg:top-40 lg:w-80'>
                     <ImageClipBox
-                        src="src/assets/img/contact-1.jpg"
+                        src={contact1}
                         clipClass="contact-clip-path-3 md:scale-125"
                     />
                 </div>

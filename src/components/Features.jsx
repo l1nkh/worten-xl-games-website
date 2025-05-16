@@ -1,6 +1,12 @@
 import React, { useState, useRef } from 'react';
 import { TiLocationArrow } from 'react-icons/ti';
 
+import feature1 from '../assets/videos/feature-1.mp4';
+import feature2 from '../assets/videos/feature-2.mp4';
+import feature3 from '../assets/videos/feature-3.mp4';
+import feature4 from '../assets/videos/feature-4.mp4';
+import feature5 from '../assets/videos/feature-5.mp4';
+
 const BentoTilt = ({ children, className = '' }) => {
     const [transformStyle, setTransformStyle] = useState('');
     const itemRef = useRef(null);
@@ -98,7 +104,7 @@ const Features = () => {
                 <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden
                 rounded-md md:h-[65vh]">
                     <BentoCard
-                        src="src/assets/videos/feature-1.mp4"
+                        src={feature1}
                         title={<><b>V</b>ideo<b>J</b>ogos</>}
                         description="Experimenta os mais diversos títulos,
                         como Spider-Man 2, Gran Turismo 7, Call of Duty: MWIII
@@ -110,7 +116,7 @@ const Features = () => {
                     <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1
                     md:row-span-2">
                         <BentoCard
-                            src="src/assets/videos/feature-2.mp4"
+                            src={feature2}
                             title={<>Cri<b>a</b>dores de <b>C</b>onteudo</>}
                             description="Vem conhecer os teus criadores de conteúdo
                             favoritos."
@@ -120,7 +126,7 @@ const Features = () => {
                     <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1
                     md:ms-0">
                         <BentoCard
-                            src="src/assets/videos/feature-3.mp4"
+                            src={feature3}
                             title={<><b>m</b>aster <b>l</b>eague</>}
                             description="Assista aos melhores jogadores de ESPORTS
                              em ação na competição de mais alto nível no nosso
@@ -130,7 +136,7 @@ const Features = () => {
                     <BentoTilt className="bento-tilt_1 me-32 md:col-span-1
                     md:me-0">
                         <BentoCard
-                            src="src/assets/videos/feature-4.mp4"
+                            src={feature4}
                             title={<>Jogos <b>RETRO</b></>}
                             description="Reviva a nostalgia dos clássicos! Venha
                              ao evento e experimente os melhores jogos retro que
@@ -149,7 +155,7 @@ const Features = () => {
 
                     <BentoTilt className="bento-tilt_2">
                         <BentoCard
-                            src="src/assets/videos/feature-5.mp4"
+                            src={feature5}
                             title={<>Realidade <b>Virtual</b></>}
                             description="Entre no mundo da realidade virtual! 
                             Experimente atividades e jogos imersivos com óculos VR

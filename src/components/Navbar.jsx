@@ -7,6 +7,8 @@ import { IoTicket } from "react-icons/io5";
 import { AudioContext } from '../contexts/AudioContext';
 import { AlertContext } from '../contexts/AlertContext';
 
+import logo from '../assets/img/logo.png';
+
 const navItems = ['Atividades', 'Parceiros', 'localização', 'Sobre', 'Contactos'];
 
 const Navbar = () => {
@@ -55,7 +57,7 @@ const Navbar = () => {
                 <nav className='flex size-full items-center justify-between p-4'>
                     <div className='flex items-center gap-7'>
                         <a href="#home">
-                            <img src="src/assets/img/logo.png" alt="logo" className='w-10' />
+                            <img src={logo} alt="logo" className='w-10' />
                         </a>
                         <a href='https://www.worten.pt/produtos/bilhete-worten-xl-games-8159633' target='_blank' rel='noopener noreferrer'>
                             <Button
