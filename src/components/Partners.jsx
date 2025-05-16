@@ -14,7 +14,7 @@ import prozisLogo from '../assets/img/PartnerLogos/prozis.png';
 import forceByInsysLogo from '../assets/img/PartnerLogos/force by insys.png';
 import sushiPokeLogo from '../assets/img/PartnerLogos/sushi & poke.png';
 import cidadeFmLogo from '../assets/img/PartnerLogos/cidade fm.png';
-import rtpArenaLogo from '..../assets/img/PartnerLogos/rtp arena.png';
+import rtpArenaLogo from '../assets/img/PartnerLogos/rtp arena.png';
 import santaCasaLogo from '../assets/img/PartnerLogos/santa casa.png';
 import lenovoLegionLogo from '../assets/img/PartnerLogos/lenovo legion.png';
 import e2techLogo from '../assets/img/PartnerLogos/e2tech.png';
